@@ -2,24 +2,7 @@ require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
 
 
-	ensure_installed = {
-		"bash",
-		"bibtex",
-		"c",
-		"cpp",
-		"diff",
-		"lua",
-		"luadoc",
-		"markdown",
-		"matlab",
-		"python",
-		"r",
-		"rust",
-		"typescript",
-		"verilog",
-		"vim",
-		"vimdoc"
-	},
+	ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -40,3 +23,21 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+---{
+---	"bash",
+---	"bibtex",
+---	"c",
+---	"cpp",
+---	"diff",
+---	"lua",
+---	"luadoc",
+---	"markdown",
+---	"matlab",
+---	"python",
+---	"r",
+---	"rust",
+---	"typescript",
+---	"verilog",
+---	"vim",
+---	"vimdoc"
+---},

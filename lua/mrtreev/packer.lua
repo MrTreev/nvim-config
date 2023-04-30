@@ -2,56 +2,61 @@ vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
 	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	use{ 'wbthomason/packer.nvim' }
+	use{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+	use{ "nvim-treesitter/playground" }
+	use{ "theprimeagen/harpoon" }
+	use{ "theprimeagen/refactoring.nvim" }
+	use{ "mbbill/undotree" }
+	use{ "tpope/vim-fugitive" }
+	use{ "nvim-treesitter/nvim-treesitter-context" }
+
+	use{
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.0',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use({
+	use{
 		'catppuccin/nvim',
 		as = 'catppucin',
 		config = function()
 		  vim.cmd('colorscheme catppuccin')
 		end
-	})
+	}
 
-	use({
+	use{
 		"folke/trouble.nvim",
 		config = function()
-			require("trouble").setup {
-				icons = false,
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			}
+			require("trouble").setup{ icons = false }
 		end
-	})
+	}
 
-	use({
+	use{
 		'jghauser/auto-pandoc.nvim',
 		requires = 'nvim-lua/plenary.nvim',
 		config = function()
 			require('auto-pandoc')
 		end
-	})
-	use({
+	}
+
+	use{
 		'nvim-lualine/lualine.nvim',
-		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-	})
+		requires = {
+			'nvim-tree/nvim-web-devicons',
+			opt = true
+		}
+	}
 
+	use{
+		"ellisonleao/glow.nvim",
+		config = function()
+			require("glow").setup()
+		end 
+	}
 
-	use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
-	use("nvim-treesitter/playground")
-	use("theprimeagen/harpoon")
-	use("theprimeagen/refactoring.nvim")
-	use("mbbill/undotree")
-	use("tpope/vim-fugitive")
-	use("nvim-treesitter/nvim-treesitter-context");
-
-
-	use {
+	use{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v1.x',
 		requires = {
@@ -73,5 +78,6 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+
 end)
 
