@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
 	use{ "theprimeagen/refactoring.nvim" }
 	use{ "mbbill/undotree" }
 	use{ "tpope/vim-fugitive" }
+	use{ "lewis6991/gitsigns.nvim" }
 	use{ "nvim-treesitter/nvim-treesitter-context" }
 
 	use{
@@ -78,6 +79,12 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+
+	-- PlantUML tools
+
+	use{ "aklt/plantuml-syntax" }
+	use{ "tyru/open-browser.vim" }
+	use{ "weirongxu/plantuml-previewer.vim" }
 
 end)
 
