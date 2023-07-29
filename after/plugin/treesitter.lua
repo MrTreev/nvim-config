@@ -2,7 +2,7 @@ require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
 
 
-	ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+	ensure_installed = { "lua", "vim", "vimdoc", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -22,22 +22,3 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-
----{
----	"bash",
----	"bibtex",
----	"c",
----	"cpp",
----	"diff",
----	"lua",
----	"luadoc",
----	"markdown",
----	"matlab",
----	"python",
----	"r",
----	"rust",
----	"typescript",
----	"verilog",
----	"vim",
----	"vimdoc"
----},

@@ -1,5 +1,6 @@
 require('catppuccin').setup({
-	disable_background = true
+	disable_background = true,
+    transparent_background = true
 })
 
 function ColorMyPencils(color) 
