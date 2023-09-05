@@ -1,22 +1,15 @@
 require('obsidian').setup {
-    dir = "~/Documents/ObsidianVault/",
+    dir = "~/Documents/Obsidian-Vault/",
     --
     notes_subdir = "Notes",
     -- Optional, set the log level for Obsidian. This is an integer corresponding to one of the log
     -- levels defined by "vim.log.levels.*" or nil, which is equivalent to DEBUG (1).
     log_level = vim.log.levels.DEBUG,
 
-    daily_notes = {
-        -- Optional, if you keep daily notes in a separate directory.
-        folder = "Daily-Notes",
-        -- Optional, if you want to change the date format for daily notes.
-        date_format = "%Y-%m-%d"
-    },
-
     -- Optional, completion.
     completion = {
         -- If using nvim-cmp, otherwise set to false
-        nvim_cmp = true,
+        nvim_cmp = false,
         -- Trigger completion at 2 chars
         min_chars = 2,
         -- Where to put new notes created from completion. Valid options are
@@ -80,7 +73,7 @@ require('obsidian').setup {
     -- use_advanced_uri = true,
 
     -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
-    open_app_foreground = false,
+    open_app_foreground = true,
 
     -- Optional, by default commands like `:ObsidianSearch` will attempt to use
     -- telescope.nvim, fzf-lua, and fzf.nvim (in that order), and use the
