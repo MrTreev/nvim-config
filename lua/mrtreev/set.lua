@@ -39,18 +39,18 @@ vim.opt.undofile = true
 
 -- Spell-Checking
 vim.opt.spelllang = {
-	"en_au",
-	"en-rare",
-	"en_gb"
+    "en_au",
+    "en-rare",
+    "en_gb"
 }
 
 -- Files
 vim.opt.wildignore = {
-	'*.o',
-	'*.a',
-	'*.pyc',
-	'__pycache__',
-	'node_modules'
+    '*.o',
+    '*.a',
+    '*.pyc',
+    '__pycache__',
+    'node_modules'
 }
 
 -- Netrw
@@ -58,4 +58,3 @@ vim.g.netrw_altv = 1
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 4
 vim.g.netrw_liststyle = 3
-
