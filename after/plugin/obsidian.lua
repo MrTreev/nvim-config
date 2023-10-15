@@ -1,5 +1,5 @@
 require('obsidian').setup {
-    dir = "~/Documents/Obsidian-Vault/",
+    dir = "~/Documents/ObsidianVault/",
     --
     notes_subdir = "Notes",
     -- Optional, set the log level for Obsidian. This is an integer corresponding to one of the log
