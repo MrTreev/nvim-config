@@ -1,20 +1,5 @@
 local lualine = require('lualine')
-
--- Color table for highlights
--- stylua: ignore
-local colors = {
-  bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
-}
+local cat_colour = require("catppuccin.palettes").get_palette()
 
 local conditions = {
   buffer_not_empty = function()
@@ -73,7 +58,7 @@ ins_left {
   function()
     return '▊'
   end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
+  color = { fg = cat_colour.blue }, -- Sets highlighting of component
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
@@ -85,26 +70,26 @@ ins_left {
   color = function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
-      no = colors.red,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
-      cv = colors.red,
-      ce = colors.red,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
-      t = colors.red,
+      n = cat_colour.red,
+      i = cat_colour.green,
+      v = cat_colour.blue,
+      [''] = cat_colour.blue,
+      V = cat_colour.blue,
+      c = cat_colour.mauve,
+      no = cat_colour.red,
+      s = cat_colour.peach,
+      S = cat_colour.peach,
+      [''] = cat_colour.peach,
+      ic = cat_colour.yellow,
+      R = cat_colour.mauve,
+      Rv = cat_colour.mauve,
+      cv = cat_colour.red,
+      ce = cat_colour.red,
+      r = cat_colour.teal,
+      rm = cat_colour.teal,
+      ['r?'] = cat_colour.teal,
+      ['!'] = cat_colour.red,
+      t = cat_colour.red,
     }
     return { fg = mode_color[vim.fn.mode()] }
   end,
@@ -120,21 +105,21 @@ ins_left {
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = cat_colour.mauve, gui = 'bold' },
 }
 
 ins_left { 'location' }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left { 'progress', color = { fg = cat_colour.subtext1, gui = 'bold' } }
 
 ins_left {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
   diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
+    color_error = { fg = cat_colour.red },
+    color_warn = { fg = cat_colour.yellow },
+    color_info = { fg = cat_colour.teal },
   },
 }
 
@@ -172,30 +157,30 @@ ins_right {
   'o:encoding', -- option component same as &encoding in viml
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = conditions.hide_in_width,
-  color = { fg = colors.green, gui = 'bold' },
+  color = { fg = cat_colour.green, gui = 'bold' },
 }
 
 ins_right {
   'fileformat',
   fmt = string.upper,
   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.green, gui = 'bold' },
+  color = { fg = cat_colour.green, gui = 'bold' },
 }
 
 ins_right {
   'branch',
   icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
+  color = { fg = cat_colour.lavender, gui = 'bold' },
 }
 
 ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
   diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
+    added = { fg = cat_colour.green },
+    modified = { fg = cat_colour.blue },
+    removed = { fg = cat_colour.red },
   },
   cond = conditions.hide_in_width,
 }
@@ -204,7 +189,7 @@ ins_right {
   function()
     return '▊'
   end,
-  color = { fg = colors.blue },
+  color = { fg = cat_colour.blue },
   padding = { left = 1 },
 }
 

@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
     use { "nvim-treesitter/nvim-treesitter-context" }
     use { "nvim-treesitter/playground" }
     use { "neovim/nvim-lspconfig" }
+    use { "williamboman/mason.nvim" }
+    use { "williamboman/mason-lspconfig.nvim" }
     use { "hrsh7th/nvim-cmp" }
     use { "hrsh7th/cmp-buffer" }
     use { "hrsh7th/cmp-path" }
