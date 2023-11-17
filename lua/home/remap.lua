@@ -1,9 +1,6 @@
 -- Set leader key
 vim.g.mapleader = " "
 
--- Netrw - File Explorer
-vim.keymap.set("n", "<leader>fe", vim.cmd.Lexplore)
-
 -- Make working file executable - eXecutable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
 

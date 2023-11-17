@@ -31,4 +31,5 @@ return require('packer').startup(function(use)
     use { "nvim-tree/nvim-web-devicons" }
     use { "tpope/vim-fugitive" }
     use { "nvim-lualine/lualine.nvim" }
+    use { "nvim-tree/nvim-tree.lua" }
 end)
