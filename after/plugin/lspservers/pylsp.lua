@@ -8,8 +8,12 @@ lsp_config.pylsp.setup {
         configurationSources = {"pycodestyle"},
         plugins = {
             autopep8 = { enabled = true },
-            jedi = { environment = "./.tox/py" },
-        }
+            pycodestyle = {
+                enabled = true,
+                ignore = { "E501" },
+                indentSize = 4,
+            },
+        },
     },
 }
 

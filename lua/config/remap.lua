@@ -14,7 +14,8 @@ vim.keymap.set("n", "<leader>c", [[:w! | !compiler <c-r>%<CR>]])
 -- Open output document - Preview
 vim.keymap.set("n", "<leader>p", [[:!opout <c-r>%<CR><CR>]])
 
--- Better deleting and copying
+-- Better deleting, copying, and pasting
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({"n", "v"}, "<leader>p", [["_dP]])
