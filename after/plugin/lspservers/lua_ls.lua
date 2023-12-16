@@ -6,8 +6,8 @@ lsp_config.lua_ls.setup {
     capabilities = lsp_capabilities,
     settings = { Lua = {
         runtime = { version = "LuaJIT" },
-        diagnostics = { globals = { "vim", "require" }},
+        diagnostics = { globals = { "vim", "require" } },
         workspace = { library = vim.api.nvim_get_runtime_file("", true) },
         telemetry = { enable = false },
-    }}
+    } }
 }

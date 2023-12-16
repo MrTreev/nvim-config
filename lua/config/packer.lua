@@ -9,7 +9,10 @@ return require('packer').startup(function(use)
     use { "nvim-telescope/telescope.nvim" }
     use { "folke/trouble.nvim", config = function() require("trouble").setup { icons = false, } end }
 
-    use { "nvim-treesitter/nvim-treesitter", run = function() local ts_update = require('nvim-treesitter.install').update({with_sync = true}) ts_update() end }
+    use { "nvim-treesitter/nvim-treesitter", run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end }
     use { "nvim-treesitter/nvim-treesitter-context" }
     use { "nvim-treesitter/playground" }
     use { "neovim/nvim-lspconfig" }

@@ -5,7 +5,7 @@ local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp_config.pylsp.setup {
     capabilities = lsp_capabilities,
     settings = {
-        configurationSources = {"pycodestyle"},
+        configurationSources = { "pycodestyle" },
         plugins = {
             autopep8 = { enabled = true },
             pycodestyle = {
@@ -16,4 +16,3 @@ lsp_config.pylsp.setup {
         },
     },
 }
-
