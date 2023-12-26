@@ -1,4 +1,4 @@
-vim.cmd.packadd('packer.nvim')
+vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
     use { "theprimeagen/refactoring.nvim" }
 
     use { "mbbill/undotree" }
+    use { "lambdalisue/suda.vim" }
+    use { "godlygeek/tabular" }
 
     use { "lewis6991/gitsigns.nvim" }
     use { "nvim-tree/nvim-web-devicons" }
