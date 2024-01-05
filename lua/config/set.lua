@@ -1,6 +1,7 @@
 vim.opt.clipboard:append { "unnamedplus" }
 
 vim.opt.colorcolumn = "0"
+vim.opt.colorcolumn = "120"
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.guioptions = "a"
