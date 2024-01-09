@@ -1,0 +1,5 @@
+require("core.lsp.clangd")
+require("core.lsp.lua_ls")
+require("core.lsp.marksman")
+require("core.lsp.pylsp")
+require("core.lsp.rust_analyzer")
