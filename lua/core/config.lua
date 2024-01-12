@@ -1,7 +1,7 @@
 vim.opt.clipboard:append { "unnamedplus" }
 
 vim.opt.colorcolumn = "0"
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 vim.opt.guicursor = ""
 vim.opt.guioptions = "a"
 vim.opt.hidden = true
