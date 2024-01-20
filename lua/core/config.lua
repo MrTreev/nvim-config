@@ -1,7 +1,6 @@
 vim.opt.clipboard:append { "unnamedplus" }
 
 vim.opt.colorcolumn = "0"
-vim.opt.colorcolumn = "80"
 vim.opt.guicursor = ""
 vim.opt.guioptions = "a"
 vim.opt.hidden = true
@@ -28,10 +27,10 @@ vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.spelllang = {
-    "en_au",
-    "en_gb",
-    "en_us",
-    "en-rare",
+	"en_au",
+	"en_gb",
+	"en_us",
+	"en-rare",
 }
 
 -- Set leader key
@@ -55,3 +54,26 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["_dP]])
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	once = true,
+	callback = function()
+		local bufnr = vim.api.nvim_get_current_buf()
+		local filename = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ":p")
+		local command = "editorconfig " .. vim.fn.fnameescape(filename)
+		local max_line_length = "80"
+		for _, line in ipairs(vim.fn.systemlist(command)) do
+			local found_length = line:match("max_line_length=(%d+)")
+			if found_length then
+				max_line_length = found_length
+				break
+			end
+		end
+		if max_line_length then
+			vim.api.nvim_win_set_option(0, 'colorcolumn', max_line_length)
+			vim.api.nvim_buf_set_option(bufnr, 'textwidth', tonumber(max_line_length))
+		else
+			vim.api.nvim_win_set_option(0, 'colorcolumn', max_line_length)
+		end
+	end,
+})
