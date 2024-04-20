@@ -7,8 +7,8 @@ return {
 	keys = {
 		{ "<leader>fe", "<cmd>NvimTreeToggle<cr>", desc = "nvim-tree toggle" },
 	},
-	opts = {},
 	config = function()
+	    local opts = {}
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 		require("nvim-tree").setup(opts)

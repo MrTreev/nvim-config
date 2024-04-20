@@ -56,14 +56,14 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["_dP]])
 
 vim.api.nvim_create_autocmd("BufEnter", {
-	once = true,
+	once = false,
 	callback = function()
 		local bufnr = vim.api.nvim_get_current_buf()
-		local filename = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ":p")
+		local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":p")
 		local command = "editorconfig " .. vim.fn.fnameescape(filename)
 		local max_line_length = "80"
 		for _, line in ipairs(vim.fn.systemlist(command)) do
-			local found_length = line:match("max_line_length=(%d+)")
+			local found_length = line:match("max_line_length%s*=%s*(%d+)")
 			if found_length then
 				max_line_length = found_length
 				break
