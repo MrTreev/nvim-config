@@ -26,10 +26,10 @@ vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.spelllang = {
-	"en_au",
-	"en_gb",
-	"en_us",
-	"en-rare",
+    "en_au",
+    "en_gb",
+    "en_us",
+    "en-rare",
 }
 
 -- Set leader key
@@ -55,24 +55,25 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["_dP]])
 
 vim.api.nvim_create_autocmd("BufEnter", {
-	once = false,
-	callback = function()
-		local bufnr = vim.api.nvim_get_current_buf()
-		local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":p")
-		local command = "editorconfig " .. vim.fn.fnameescape(filename)
-		local max_line_length = "80"
-		for _, line in ipairs(vim.fn.systemlist(command)) do
-			local found_length = line:match("max_line_length%s*=%s*(%d+)")
-			if found_length then
-				max_line_length = found_length
-				break
-			end
-		end
-		if max_line_length then
-			vim.api.nvim_win_set_option(0, 'colorcolumn', max_line_length)
-			vim.api.nvim_buf_set_option(bufnr, 'textwidth', tonumber(max_line_length))
-		else
-			vim.api.nvim_win_set_option(0, 'colorcolumn', max_line_length)
-		end
-	end,
+    once = false,
+    callback = function()
+        local bufnr = vim.api.nvim_get_current_buf()
+        local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":p")
+        local command = "editorconfig " .. vim.fn.fnameescape(filename)
+        local default_line_length = 80
+        local max_line_length = nil
+        for _, line in ipairs(vim.fn.systemlist(command)) do
+            local found_length = line:match("max_line_length%s*=%s*(%d+)")
+            if found_length then
+                max_line_length = found_length
+                break
+            end
+        end
+        if max_line_length then
+            vim.api.nvim_set_option_value('colorcolumn', max_line_length, { win = 0 })
+            vim.api.nvim_set_option_value('textwidth', tonumber(max_line_length), { buf = bufnr })
+        else
+            vim.api.nvim_set_option_value('colorcolumn', default_line_length, { win = 0 })
+        end
+    end,
 })
