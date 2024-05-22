@@ -2,7 +2,6 @@ vim.opt.clipboard:append { "unnamedplus" }
 
 vim.opt.colorcolumn = "0"
 vim.opt.guicursor = ""
-vim.opt.guioptions = "a"
 vim.opt.hidden = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
