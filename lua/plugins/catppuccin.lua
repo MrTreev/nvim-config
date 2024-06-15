@@ -3,9 +3,9 @@ return {
 	name = "catppuccin",
 	priority = 1000,
 	lazy = false,
-	transparent_background = true,
 	opts = {
 		flavour = "mocha",
+		transparent_background = true,
 		integrations = {
 			alpha = false,
 			cmp = true,

@@ -4,9 +4,8 @@ return {
         'nvim-lua/plenary.nvim'
     },
     lazy = false,
-    opts = {},
     keys = function()
-        require("harpoon").setup(opts)
+        require("harpoon").setup({})
         local mark = require("harpoon.mark")
         local ui = require("harpoon.ui")
         return {
@@ -26,5 +25,4 @@ return {
             { "<leader>h0", function() ui.nav_file(10) end },
         }
     end,
-    setup = {},
 }

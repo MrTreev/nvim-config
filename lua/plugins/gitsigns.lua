@@ -43,5 +43,5 @@ return {
 			enable = false
 		},
 	},
-	setup = function() require("gitsigns").setup(opts) end,
+	config = function() require("gitsigns").setup(opts) end,
 }
