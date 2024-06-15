@@ -1,6 +1,5 @@
 return {
-	"lambdalisue/suda.vim",
-	lazy = false,
-	opts = {},
-	config = function() end,
+    "lambdalisue/suda.vim",
+    lazy = false,
+    config = function(_) end,
 }

@@ -1,7 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
     lazy = false,
-    opts = {},
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),

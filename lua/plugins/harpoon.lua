@@ -4,8 +4,9 @@ return {
         'nvim-lua/plenary.nvim'
     },
     lazy = false,
-    keys = function()
-        require("harpoon").setup({})
+    opts = {},
+    keys = function(_, opts)
+        require("harpoon").setup(opts)
         local mark = require("harpoon.mark")
         local ui = require("harpoon.ui")
         return {
