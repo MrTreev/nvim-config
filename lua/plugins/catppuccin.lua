@@ -17,7 +17,6 @@ return {
             harpoon = true,
             markdown = true,
             mason = true,
-            mini = { enabled = false },
             neogit = false,
             notify = false,
             nvimtree = true,

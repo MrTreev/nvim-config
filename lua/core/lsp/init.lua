@@ -11,12 +11,14 @@ local module_name = ... or "init.d"
 local function scandir(directory)
     local i, t, popen = 0, {}, io.popen
     local pfile = popen('ls -a "' .. directory .. '"')
-    if pfile:lines() ~= nil then
-        for filename in pfile:lines() do
-            i = i + 1
-            t[i] = filename
+    if pfile ~= nil then
+        if pfile:lines() ~= nil then
+            for filename in pfile:lines() do
+                i = i + 1
+                t[i] = filename
+            end
+            pfile:close()
         end
-        pfile:close()
     end
     return t
 end

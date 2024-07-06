@@ -33,6 +33,7 @@ vim.opt.spelllang = {
 }
 
 vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 -- Set leader key
 vim.g.mapleader = " "
