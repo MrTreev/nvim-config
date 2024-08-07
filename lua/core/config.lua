@@ -19,6 +19,7 @@ vim.opt.termguicolors = true
 vim.opt.title = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
+vim.opt.listchars = "tab:→ ,eol:↲,nbsp:•,space:·,extends:→,precedes:←"
 
 vim.opt.backup = false
 vim.opt.swapfile = false
@@ -39,21 +40,19 @@ vim.g.loaded_ruby_provider = 0
 vim.g.mapleader = " "
 
 -- Make working file executable - eXecutable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set({ "n", }, "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Paging down and up auto-center
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set({ "n", }, "<C-d>", "<C-d>zz")
+vim.keymap.set({ "n", }, "<C-u>", "<C-u>zz")
 
--- Run compiler command - Compile
-vim.keymap.set("n", "<leader>c", [[:w! | !compiler <c-r>%<CR>]])
-
--- Open output document - Preview
-vim.keymap.set("n", "<leader>p", [[:!opout <c-r>%<CR><CR>]])
+-- Quickfix Navigation
+vim.keymap.set({ "n", }, "<leader>fn", [[:cnext<CR>]])
+vim.keymap.set({ "n", }, "<leader>fp", [[:cprevious<CR>]])
 
 -- Better deleting, copying, and pasting
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({ "n", }, "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["_dP]])
 

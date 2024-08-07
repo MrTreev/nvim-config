@@ -5,9 +5,9 @@ return {
     },
     lazy = false,
     keys = {
-        { "<leader>fe", "<cmd>NvimTreeToggle<cr>", desc = "nvim-tree toggle" },
+        { "<leader>fe",  "<cmd>NvimTreeToggle<cr>",   desc = "nvim-tree toggle" },
         { "<leader>fof", "<cmd>NvimTreeFindFile<cr>", desc = "nvim-tree find current file" },
-        { "<leader>foo", "<cmd>NvimTreeFocus<cr>", desc = "nvim-tree focus" },
+        { "<leader>foo", "<cmd>NvimTreeFocus<cr>",    desc = "nvim-tree focus" },
     },
     config = function()
         local opts = {}

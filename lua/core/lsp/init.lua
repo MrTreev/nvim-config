@@ -29,7 +29,7 @@ local config_files = vim.tbl_filter(function(filename)
     return is_lua_module and not is_this_file
 end, scandir(module_directory))
 
-for i, filename in ipairs(config_files) do
+for _, filename in ipairs(config_files) do
     local config_module = string.match(filename, "(.+).lua$")
     require(module_name .. "." .. config_module)
 end
