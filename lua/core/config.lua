@@ -56,6 +56,9 @@ vim.keymap.set({ "n", }, "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["_dP]])
 
+-- Find and replace selected
+vim.keymap.set({ "v" }, "<leader>r", [["hy:%s/<C-r>h//g<left><left>]])
+
 -- Set colourcolumn and linelength from editorconfig
 vim.api.nvim_create_autocmd("BufEnter", {
     once = false,
