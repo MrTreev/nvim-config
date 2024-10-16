@@ -7,19 +7,17 @@ require("lspconfig").clangd.setup({
 require("clangd_extensions").setup({
     inlay_hints = {
         inline = vim.fn.has("nvim-0.10") == 1,
-        -- Options other than `highlight' and `priority' only work
-        -- if `inline' is disabled
+        -- Options other than `highlight' and `priority' only work if `inline' is disabled
         -- Only show inlay hints for the current line
         only_current_line = false,
         -- Event which triggers a refresh of the inlay hints.
-        -- You can make this { "CursorMoved" } or { "CursorMoved,CursorMovedI" } but
-        -- note that this may cause higher CPU usage.
+        -- You can make this { "CursorMoved" } or { "CursorMoved,CursorMovedI" } but note that this may cause higher CPU usage.
         -- This option is only respected when only_current_line is true.
         only_current_line_autocmd = { "CursorHold" },
         -- whether to show parameter hints with the inlay hints or not
         show_parameter_hints = true,
         -- prefix for parameter hints
-        parameter_hints_prefix = "<- ",
+        parameter_hints_prefix = "-> ",
         -- prefix for all the other hints (type, chaining)
         other_hints_prefix = "=> ",
         -- whether to align to the length of the longest line in the file
@@ -36,6 +34,24 @@ require("clangd_extensions").setup({
         priority = 100,
     },
     ast = {
+        --[[
+        role_icons = {
+            type = "🄣",
+            declaration = "🄓",
+            expression = "🄔",
+            statement = ";",
+            specifier = "🄢",
+            ["template argument"] = "🆃",
+        },
+        kind_icons = {
+            Compound = "🄲",
+            Recovery = "🅁",
+            TranslationUnit = "🅄",
+            PackExpansion = "🄿",
+            TemplateTypeParm = "🅃",
+            TemplateTemplateParm = "🅃",
+            TemplateParamObject = "🅃",
+        }, ]]
         role_icons = {
             type = "",
             declaration = "",
