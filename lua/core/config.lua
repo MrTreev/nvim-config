@@ -47,6 +47,12 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 -- Set leader key
 vim.g.mapleader = " "
 
+-- Compile working file (or run make if in project directory)
+vim.keymap.set({ "n", }, "<leader>c", "<cmd>!compiler %<CR>", { silent = true })
+
+-- Open file preview
+vim.keymap.set({ "n", }, "<leader>o", "<cmd>!opout %<CR>", { silent = true })
+
 -- Make working file executable - eXecutable
 vim.keymap.set({ "n", }, "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
