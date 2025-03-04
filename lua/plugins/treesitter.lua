@@ -7,6 +7,7 @@ return {
     build = ":TSUpdate",
     config = function()
         vim.treesitter.language.register('hyprlang', '.conf')
+        vim.treesitter.language.register('c', '.dox')
         require("nvim-treesitter.configs").setup({
             ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "hyprlang" },
             sync_install = false,

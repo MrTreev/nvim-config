@@ -35,6 +35,14 @@ vim.opt.spelllang = {
 
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+vim.g.load_doxygen_syntax = 1
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    pattern = { "*.dox", "*.doxygen" },
+    callback = function()
+        vim.opt.syntax = "c.doxygen"
+        vim.api.nvim_command("highlight Comment cterm=none gui=none guifg=#6c7086")
+    end,
+})
 
 -- Set leader key
 vim.g.mapleader = " "
@@ -46,7 +54,7 @@ vim.keymap.set({ "n", }, "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set({ "n", }, "<C-d>", "<C-d>zz")
 vim.keymap.set({ "n", }, "<C-u>", "<C-u>zz")
 
--- Quickfix Navigation
+-- Quick-fix Navigation
 vim.keymap.set({ "n", }, "<leader>fn", [[:cnext<CR>]])
 vim.keymap.set({ "n", }, "<leader>fp", [[:cprevious<CR>]])
 
