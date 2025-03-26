@@ -23,11 +23,13 @@ local function scandir(directory)
     return t
 end
 
-local config_files = vim.tbl_filter(function(filename)
+local config_files = vim.tbl_filter(
+    function(filename)
     local is_lua_module = string.match(filename, "[.]lua$")
     local is_this_file = filename == module_filename
     return is_lua_module and not is_this_file
-end, scandir(module_directory))
+end, scandir(module_directory)
+)
 
 for _, filename in ipairs(config_files) do
     local config_module = string.match(filename, "(.+).lua$")

@@ -38,24 +38,6 @@ require("clangd_extensions").setup({
         priority = 100,
     },
     ast = {
-        --[[
-        role_icons = {
-            type = "🄣",
-            declaration = "🄓",
-            expression = "🄔",
-            statement = ";",
-            specifier = "🄢",
-            ["template argument"] = "🆃",
-        },
-        kind_icons = {
-            Compound = "🄲",
-            Recovery = "🅁",
-            TranslationUnit = "🅄",
-            PackExpansion = "🄿",
-            TemplateTypeParm = "🅃",
-            TemplateTemplateParm = "🅃",
-            TemplateParamObject = "🅃",
-        }, ]]
         role_icons = {
             type = "",
             declaration = "",
@@ -64,7 +46,6 @@ require("clangd_extensions").setup({
             statement = "",
             ["template argument"] = "",
         },
-
         kind_icons = {
             Compound = "",
             Recovery = "",
