@@ -7,5 +7,6 @@ return {
     config = function()
         require("mason").setup()
         require("mason-lspconfig").setup()
-    end
+    end,
+    opts = { ensure_installed = { "tree-sitter-cli" }, },
 }
