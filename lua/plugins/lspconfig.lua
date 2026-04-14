@@ -19,6 +19,6 @@ return {
                 vim.keymap.set("n", "<leader>krn", vim.lsp.buf.rename, { buffer = ev.buf })
             end
         })
-        vim.lsp.set_log_level("WARN")
+        vim.lsp.log.set_level("WARN")
     end,
 }

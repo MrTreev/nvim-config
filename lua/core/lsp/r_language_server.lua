@@ -1,4 +1,4 @@
 -- R and RMarkdown
-require("lspconfig").r_language_server.setup({
+vim.lsp.config("r_language_server", {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
