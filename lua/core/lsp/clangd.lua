@@ -7,6 +7,7 @@ vim.lsp.config("clangd", {
         vim.keymap.set("n", "<leader>ki", "<cmd>ClangdShowSymbolInfo<CR>")
     end
 })
+vim.lsp.enable("clangd")
 
 require("clangd_extensions").setup({
     inlay_hints = {

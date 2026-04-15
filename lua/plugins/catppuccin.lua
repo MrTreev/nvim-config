@@ -7,33 +7,14 @@ return {
         flavour = "mocha",
         transparent_background = true,
         integrations = {
-            alpha = false,
             cmp = true,
-            dap = false,
-            dap_ui = false,
-            dashboard = false,
-            flash = false,
             gitsigns = true,
             harpoon = true,
             markdown = true,
             mason = true,
-            neogit = false,
-            notify = false,
             nvimtree = true,
-            rainbow_delimiters = false,
-            semantic_tokens = false,
             telescope = { enabled = true, style = "nvchad" },
             treesitter = true,
-            ufo = false,
-            illuminate = {
-                enabled = false,
-                lsp = false,
-            },
-            indent_blankline = {
-                enabled = false,
-                scope_color = "",
-                colored_indent_levels = false,
-            },
             native_lsp = {
                 enabled = true,
                 virtual_text = {
@@ -51,14 +32,6 @@ return {
                 inlay_hints = {
                     background = true,
                 },
-            },
-            navic = {
-                enabled = false,
-                custom_bg = "NONE",
-            },
-            dropbar = {
-                enabled = false,
-                color_mode = false,
             },
         },
     },
